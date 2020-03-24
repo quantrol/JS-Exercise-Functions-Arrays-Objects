@@ -35,9 +35,9 @@ function addNumbers(num1, num2) {
  * the returned value should look like: 'Goodbye, Andy. Have a great day.'
  * 
 */
-function sayGoodbye(/* code here */) {
-  /* code here */
-}
+function sayGoodbye(name) {
+  return('Goodbye, ' + name+'. Have a great day.');
+  }
 
 /**
  * ### Challenge `temperatureCtoF`
@@ -53,9 +53,11 @@ function sayGoodbye(/* code here */) {
  * Hint 1: The formula for converting celsius to fahrenheit is t*9/5 + 32 where t is the temperature in celsius.
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
-function temperatureCtoF(/* code here */) {
-  /* code here */
+function temperatureCtoF(celsius) {
+  let fahrenheit = Math.round( celsius * 9/5 + 32);
+  return fahrenheit;
 }
+
 
 /**
  * ### Challenge `temperatureInF`
@@ -74,8 +76,14 @@ function temperatureCtoF(/* code here */) {
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(/* code here */) {
-  /* code here */
+function temperatureInF(temp, unit) {
+  unit.toLowerCase() === 'f';
+  if (unit === 'F') 
+    return Math.round(temp) + 'F';
+  else {
+    return temperatureCtoF(temp) + 'F';
+  }
+
 }
 
 
@@ -85,7 +93,7 @@ function temperatureInF(/* code here */) {
  * @instructions
  * This function should take an id, a name and an email as arguments,
  * and return an object with `id`, `name` and `email` properties.
- * 
+ * --
  * For example, if we invoke `makePersonObject`
  * passing 5, 'Leia' and 'leia@leia.com' as arguments,
  * the returned value should look like:
